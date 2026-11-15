@@ -3,6 +3,7 @@ package com.zixiao.yrtz.steve.spSteve.endersummonerSteve;
 import com.zixiao.yrtz.reegister.ModEntities;
 import com.zixiao.yrtz.steve.baseEntity.SteveEntity;
 import com.zixiao.yrtz.steve.ai.enderSteveAttackGoal;
+import com.zixiao.yrtz.steve.ai.SteveTargetGoals;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -44,6 +45,9 @@ public class endersummonerSteveEntity extends Monster {
 
         this.targetSelector.addGoal(3,
                 new NearestAttackableTargetGoal<>(this, Zombie.class, true));
+
+        // 该类直接继承 Monster，不经过 SteveEntity，需要单独追加强袭者目标
+        SteveTargetGoals.addIllagerTargets(this);
     }
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()

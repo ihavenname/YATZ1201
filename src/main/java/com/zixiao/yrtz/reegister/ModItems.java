@@ -20,7 +20,7 @@ public class ModItems {
                     "billie_jean_disc",
                     () -> new RecordItem(6,ModSounds.IAM_BAD,
                             new Item.Properties().rarity(Rarity.EPIC).stacksTo(1),
-                            3240
+                            5000
                     )
             );
     public static final RegistryObject<Item> FARMER_STEVE_SPAWN_EGG =
